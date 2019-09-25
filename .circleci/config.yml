@@ -41,6 +41,8 @@ jobs:
 
       - run: yarn install
 
+      - run: init
+
       - save_cache:
           paths:
             - node_modules
@@ -48,6 +50,4 @@ jobs:
 
       # run tests!
       - run: yarn test
-          override:
-            - mocha
 
