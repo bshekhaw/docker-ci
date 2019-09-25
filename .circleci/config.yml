@@ -2,8 +2,12 @@
 # it is explicitly included in module 5
 
 #deployment:
-  dockerhub:
-    branch: master
-    commands:
-      - $docker_trigger
+#  dockerhub:
+#    branch: master
+#    commands:
+#      - $docker_trigger
 
+jobs:
+  test:
+    override:    
+      - mocha
