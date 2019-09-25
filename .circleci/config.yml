@@ -7,6 +7,3 @@
     commands:
       - $docker_trigger
 
-test:
-  override:    
-    - mocha
