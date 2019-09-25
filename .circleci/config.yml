@@ -41,7 +41,7 @@ jobs:
 
       #- run: yarn install
 
-       - run: npm install
+       - run: yarn npm install
 
       - save_cache:
           paths:
