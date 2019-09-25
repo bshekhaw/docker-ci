@@ -39,9 +39,12 @@ jobs:
       # run tests!
       - run: yarn test
 
-#deployment:
-#  dockerhub:
-#    branch: master
-#    commands:
-#      - $docker_trigger
+deployment:
+  dockerhub:
+    branch: master
+    commands:
+      - $docker_trigger
 
+test:
+  override:    
+    - mocha
