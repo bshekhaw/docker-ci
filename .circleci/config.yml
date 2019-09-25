@@ -7,7 +7,7 @@
 #    commands:
 #      - $docker_trigger
 
-jobs:
+workflows:
   test:
     override:    
       - mocha
