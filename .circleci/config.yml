@@ -21,7 +21,6 @@ jobs:
 
     steps:
       - checkout
-
       # Download and cache dependencies
       - restore_cache:
           keys:
@@ -43,4 +42,12 @@ jobs:
           # Push docker image
           name: Trigger docker remotely 
           #command: $docker_trigger
-          command: curl --data build=true -X POST $docker_trigger 
+          command: curl --data build=true -X POST $docker_trigger
+     
+      - run:
+          name: Build Docker Image
+          command: docker build -t $DOCKER_CI_IMAGE_NAME:latest 
+          
+      - run:
+          name: Publish Docker Image to Docker Hub
+          command: echo "$DOCKERHUB_PASS" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin docker push $IMAGE_NAME:latest
