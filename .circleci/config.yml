@@ -43,4 +43,4 @@ jobs:
     dockerhub:
       branch: master
       commands:
-	- $docker_trigger  
+        - $docker_trigger
