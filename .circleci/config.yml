@@ -47,7 +47,7 @@ jobs:
       - run:
           name: Build Docker Image
           command: |
-            docker build -t "$DOCKER_CI_IMAGE_NAME":latest 
+            echo  docker build -t "$DOCKER_CI_IMAGE_NAME":latest 
           
       - run:
           name: Docker login
