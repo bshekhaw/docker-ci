@@ -46,13 +46,15 @@ jobs:
      
       - run:
           name: Build Docker Image
-          command: |
-            echo  docker build -t "$DOCKER_CI_IMAGE_NAME":latest 
-          
+         #command: |
+         #   echo  docker build -t "$DOCKER_CI_IMAGE_NAME":latest 
+          command: docker build -t bshekhaw/docker-ci:latest 
       - run:
           name: Docker login
-          command: echo docker login -u "$DOCKERHUB_USERNAME" -p "$DOCKERHUB_PASS" 
+          #command: echo docker login -u "$DOCKERHUB_USERNAME" -p "$DOCKERHUB_PASS"
+          command: docker login -u bshekhaw -p Docker123$ 
 
       - run:
           name: Publish Docker image to Docker hub
-          command: echo docker push "$DOCKER_CI_IMAGE_NAME":latest
+          #command: echo docker push "$DOCKER_CI_IMAGE_NAME":latest
+          command: docker push bshekhaw/docker-ci:latest
