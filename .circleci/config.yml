@@ -54,4 +54,4 @@ jobs:
 
       - run:
           name: Publish Docker image to Docker hub
-          command: echo docker push $IMAGE_NAME:latest
+          command: echo docker push "$IMAGE_NAME":latest
