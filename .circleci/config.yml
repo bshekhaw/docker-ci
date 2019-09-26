@@ -43,4 +43,4 @@ jobs:
           # Push docker image
           name: Trigger docker remotely 
           #command: $docker_trigger
-          command: curl --data build=true -X POST https://cloud.docker.com/api/build/v1/source/fa123ead-05bb-45b3-a9a5-cef42948cb35/trigger/52c60dc3-c0ca-4a16-9b9e-8b88cf06d46d/call/
+          command: curl --data build=true -X POST $docker_trigger 
