@@ -39,8 +39,7 @@ jobs:
       # run tests!
       - run: yarn test
 
-  deploy:
-    dockerhub:
-      branch: master
-      commands:
-        - $docker_trigger
+      - run: 
+          # Push docker image
+          name: Trigger docker remotely 
+          command: $docker_trigger
