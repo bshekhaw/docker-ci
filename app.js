@@ -13,5 +13,10 @@ app.get('/', function(req, res) {
   });
 });
 
+function stop() {
+  app.close();
+}
+
 app.listen(8080);
 module.exports.getApp = app;
+module.exports.stop = stop;
