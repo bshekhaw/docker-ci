@@ -49,5 +49,9 @@ jobs:
           command: echo docker build -t "$DOCKER_CI_IMAGE_NAME":latest 
           
       - run:
-          name: Publish Docker Image to Docker Hub
-          command: docker login -u "$DOCKERHUB_USERNAME" -p "$DOCKERHUB_PASS" docker push $IMAGE_NAME:latest
+          name: Docker login
+          command: echo docker login -u "$DOCKERHUB_USERNAME" -p "$DOCKERHUB_PASS" 
+
+      - run:
+          name: Publish Docker image to Docker hub
+          command: echo docker push $IMAGE_NAME:latest
